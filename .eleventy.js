@@ -14,7 +14,7 @@ export default (eleventyConfig) => {
 
     eleventyConfig.addDataExtension("yml, yaml", (contents) => yaml_load(contents) );
 
-    
+
     return {
         // When a passthrough file is modified, rebuild the pages
         passthroughFileCopy: true,
@@ -23,7 +23,8 @@ export default (eleventyConfig) => {
             input: "src",
             output: "public",
             data: "_data",
-            includes: "_includes"
+            includes: "_includes",
+            layouts: "_includes/layouts"
         }
     }
 }
