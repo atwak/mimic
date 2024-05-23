@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'gentiumplus';
+    src: url("/font/gentiumplus-regular.ttf") format('opentype');
+}
+@font-face {
+    font-family: 'gentiumplus';
+    src: url("/font/gentiumplus-bold.ttf") format('opentype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'gentiumplus';
+    src: url("/font/gentiumplus-italic.ttf") format('opentype');
+    font-style: italic;
+}

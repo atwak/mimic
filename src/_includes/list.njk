@@ -1,0 +1,12 @@
+---
+layout: main
+---
+
+<ul>
+{% for post in collections['boardgame'] %}
+  <li>
+      <a href={{post.url | safe}}>
+        {{ post.data.title }}
+      </a>
+{% endfor %}
+</ul>

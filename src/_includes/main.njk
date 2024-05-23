@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="robots" content="noindex, nofollow" />
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon" />
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+	{% include "./partials/header_main.njk" %}
+
+	{% if title %}
+		<h1>{{ title | safe }}</h1>
+	{% endif %}
+
+	<main>
+		{{ content | safe }}
+	</main>
+
+	<script src="/js/main.js" type="module"></script>
+
+</body>
+</html>

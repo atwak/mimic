@@ -1,0 +1,127 @@
+:root {
+    --line-height: 1.6em;
+    --step: var(--line-height);
+    --step-half: calc(var(--step) / 2);
+
+    --color-bg: hsl(30, 8%, 95%);
+
+    font-size: 1.4rem;
+    line-height: var(--step);
+    font-family: gentiumplus;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+        "aside nav-main right"
+        "aside h1 right"
+        "aside main right";
+    grid-template-columns: 1fr 70ch 1fr;
+    grid-column-gap: calc(1 * var(--step-half));
+    background-color: var(--color-bg);
+
+}
+
+#nav-main {
+    grid-area: nav-main;
+}
+
+a {
+    text-decoration-thickness: 1px;
+}
+
+h1 {
+    text-align: center;
+    grid-area: h1;
+}
+
+.aside {
+    grid-area: aside;
+    position: relative;
+}
+.toc {
+    position: sticky;
+    inset: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    max-width: 25rem;
+    font-size: .9em;
+}
+.toc-open_label {
+    position: fixed;
+    z-index: 2;
+    inset: 0 0 auto auto;
+    display: none;
+    font-size: 1em;
+    padding: 0 .3em;
+    cursor: pointer;
+    border: 1px dotted grey;
+    border-radius: 3px;
+    background-color: var(--color-bg)
+}
+.up {
+    display: none;
+    grid-area: up;
+}
+#toc-open {
+    display: none;
+}
+@media screen and (max-width: 870px) {
+    body {
+        grid-template-areas:
+            "nav-main up aside"
+            "h1 h1 h1"
+            "main main main";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .aside {
+        position: static;
+    }
+    .toc-is-present {
+        display: block;
+    }
+    .toc {
+        position: fixed;
+        z-index: 1;
+        inset: 0 0 100% 100%;
+        max-width: 100%;
+        background-color: var(--color-bg)
+    }
+    #toc-open:checked ~ .toc {
+        inset: 0;
+    }
+    #toc-open:checked + .toc-open_label {
+        background-color: lightgray;
+    }
+}
+
+main,
+#nav-main {
+    padding-inline: var(--step-half);
+}
+
+
+main {
+    grid-area: main;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1em;
+}
+
+dl {}
+dt {
+    font-variant: all-small-caps;
+    text-transform: lowercase;
+}
+dd {
+    margin-inline-start: var(--step);
+}
+dd:not(:last-of-type) {
+    margin-block-end: var(--step-half);
+}
+dd p {
+    margin-block: 0 var(--step-half);
+}
