@@ -1,0 +1,49 @@
+{% if data.expansion %}
+<p>
+  Необходима базовая игра.
+</p>
+{% endif %}
+
+<dl class="dl--meta">
+
+  {% if data.age %}
+  <dt> возраст
+  <dd> {{ data.age }}
+  {% endif %}
+
+  {% if data.players %}
+  <dt> количество игроков
+  <dd> {{ data.players }}
+  {% endif %}
+
+  {% if data.time %}
+  <dt> время игры
+  <dd> {{ data.time }}
+  {% endif %}
+
+  {% if data.language %}
+  <dt> язык
+  <dd> {{ data.language }}
+  {% endif %}
+
+  {% if data.links %}
+  <dt> ссылки
+  <dd> {{ data.links }}
+  {% endif %}
+
+  {% if data.manufacturer %}
+  <dt> издатель
+  <dd> {{ data.manufacturer }}
+  {% endif %}
+
+  {% if data.year %}
+  <dt> год издания
+  <dd> {{ data.year }}
+  {% endif %}
+
+  {% if data.series %}
+  <dt> серия игр
+  <dd> {{ data.series }}
+  {% endif %}
+
+</dl>
