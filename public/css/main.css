@@ -5,6 +5,8 @@
 
     --color-bg: hsl(30, 8%, 95%);
 
+    --ffamily-meta: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
     font-size: 1.4rem;
     line-height: var(--step);
     font-family: gentiumplus;
@@ -41,6 +43,14 @@ h1 {
     grid-area: aside;
     position: relative;
 }
+
+.meta {
+    font-family: var(--ffamily-meta);
+}
+
+
+/* TOC */
+
 .toc {
     position: sticky;
     inset: 0;
@@ -97,6 +107,9 @@ h1 {
     }
 }
 
+/* TOC END */
+
+
 main,
 #nav-main {
     padding-inline: var(--step-half);
@@ -109,19 +122,4 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1em;
-}
-
-dl {}
-dt {
-    font-variant: all-small-caps;
-    text-transform: lowercase;
-}
-dd {
-    margin-inline-start: var(--step);
-}
-dd:not(:last-of-type) {
-    margin-block-end: var(--step-half);
-}
-dd p {
-    margin-block: 0 var(--step-half);
 }

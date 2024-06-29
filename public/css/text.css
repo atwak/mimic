@@ -107,22 +107,36 @@ ul > li::before {
 	font-size: .9em;
 }
 
-dl {}
-.dl--meta {
-	font-size: .8em;
-	display: grid;
-	grid-template-columns: 10em 1fr;
+dl {
+	margin-block: var(--step);
 }
-.dl--meta dd {
-	margin: 0;
+dt {
+	font-variant: all-small-caps;
+	text-transform: lowercase;
 }
 dd {
 	margin-inline: 0;
 	padding-inline-start: var(--step);
 }
-db {
-	margin-inline-start: 1em;
+dd:not(:last-of-type) {
+    margin-block-end: var(--step-half);
 }
+dd p {
+    margin-block: 0 var(--step-half);
+}
+
+.dl--meta {
+	font-family: var(--ffamily-meta);
+	font-size: .8em;
+	line-height: 1.2em;
+	display: grid;
+	grid-template-columns: 10em 1fr;
+	row-gap: var(--step-half);
+}
+.dl--meta dd {
+	margin: 0;
+}
+
 
 p, blockquote, ul, ol, li, dl, dt, dd, a {
 	overflow-wrap: break-word;
@@ -137,3 +151,4 @@ p, blockquote, ul, ol, li, dl, dt, dd, a {
 .dl-div {
 	break-inside: avoid;
 }
+

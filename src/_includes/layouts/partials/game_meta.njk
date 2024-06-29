@@ -1,49 +1,61 @@
-{% if data.expansion %}
-<p>
-  Необходима базовая игра.
-</p>
-{% endif %}
+<aside class="meta">
 
-<dl class="dl--meta">
-
-  {% if data.age %}
-  <dt> возраст
-  <dd> {{ data.age }}
+  {% if data.expansion %}
+    <p>
+      Необходима базовая игра.
+    </p>
   {% endif %}
 
-  {% if data.players %}
-  <dt> количество игроков
-  <dd> {{ data.players }}
-  {% endif %}
+  <dl class="dl--meta">
 
-  {% if data.time %}
-  <dt> время игры
-  <dd> {{ data.time }}
-  {% endif %}
+    {% if data.age %}
+      <dt> возраст
+      <dd> {{ data.age }}
+    {% endif %}
 
-  {% if data.language %}
-  <dt> язык
-  <dd> {{ data.language }}
-  {% endif %}
+    {% if data.players %}
+      <dt> количество игроков
+      <dd> {{ data.players }}
+    {% endif %}
 
-  {% if data.links %}
-  <dt> ссылки
-  <dd> {{ data.links }}
-  {% endif %}
+    {% if data.time %}
+      <dt> время игры
+      <dd> {{ data.time }}
+    {% endif %}
 
-  {% if data.manufacturer %}
-  <dt> издатель
-  <dd> {{ data.manufacturer }}
-  {% endif %}
+    {% if data.language %}
+      <dt> язык
+      <dd> {{ data.language }}
+    {% endif %}
 
-  {% if data.year %}
-  <dt> год издания
-  <dd> {{ data.year }}
-  {% endif %}
+    {% if data.links %}
+      <dt> ссылки
+      <dd>
+          <a href="{{ data.links }}">
+            {{ data.links }}
+          </a>
+    {% endif %}
 
-  {% if data.series %}
-  <dt> серия игр
-  <dd> {{ data.series }}
-  {% endif %}
+    {% if data.manufacturer %}
+      <dt> издатель
+      <dd> {{ data.manufacturer }}
+    {% endif %}
 
-</dl>
+    {% if data.year %}
+      <dt> год издания
+      <dd> {{ data.year }}
+    {% endif %}
+
+    {% if data["primary name"] %}
+      <dt> ор. название
+      <dd> {{ data["primary name"] }}
+    {% endif %}
+
+    {% if data.series %}
+      <dt> серия игр
+      <dd> {{ data.series }}
+    {% endif %}
+
+  </dl>
+  
+</aside>
